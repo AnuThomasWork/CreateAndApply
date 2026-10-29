@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "createandapply"
+version = "0.1.0"
+description = "Generate ATS-friendly tailored resumes and cover letters from a job description (text or URL)."
+requires-python = ">=3.10"
+dependencies = ["requests", "beautifulsoup4", "PyYAML", "python-docx", "reportlab"]
+
+[project.scripts]
+createandapply = "createandapply.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
